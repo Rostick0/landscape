@@ -24,20 +24,20 @@ function scss() {
         .pipe(dest('dist/css'))
 }
 
+function js() {
+    return src(['app/js/UI.js'])
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(uglify())
+        .pipe(concat('all.js'))
+        .pipe(dest('dist/js'))
+}
+
 function img() {
     return src('app/img/**')
         .pipe(dest('dist/img'))
 }
-
-// function js() {
-//     return src(['app/js/vars.js'])
-//         .pipe(babel({
-//             presets: ['@babel/env']
-//         }))
-//         .pipe(uglify())
-//         .pipe(concat('all.js'))
-//         .pipe(dest('dist/js'))
-// }
 
 function font() {
     return src('app/font/**')
@@ -53,7 +53,7 @@ function serve() {
     watch('app/layout/**.html', series(html)).on('change', reload);
     watch('app/components/**.html', series(html)).on('change', reload);
     watch('app/source/scss/**', series(scss)).on('change', reload);
-    // watch('app/js/**', series(js)).on('change', reload);
+    watch('app/js/**', series(js)).on('change', reload);
 }
 
-exports.serve = series(html, scss, img, font, serve);
+exports.serve = series(html, scss, js, img, font, serve);
