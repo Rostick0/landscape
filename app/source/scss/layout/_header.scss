@@ -1,0 +1,20 @@
+.header {
+    &__container {
+        display: flex;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        column-gap: 2.25rem;
+
+        &_href {
+            color: var(--first-color);
+        }
+    }
+}
