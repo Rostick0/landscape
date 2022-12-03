@@ -1,0 +1,36 @@
+.services {
+    &__title {
+        margin-bottom: 13rem;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 8rem 4rem;
+    }
+
+    &__item {
+        &_image {
+            margin-bottom: 0.93rem;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &_title {
+            color: var(--second-color);
+
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            margin-bottom: 0.625rem;
+        }
+
+        &_description {
+            color: var(--third-color);
+
+            font-size: 1.125rem;
+        }
+    }
+}

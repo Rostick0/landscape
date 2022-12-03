@@ -1,0 +1,42 @@
+.landscape {
+    margin-bottom: 11.625rem;
+
+    &__title {
+        font-family: 'Posterama Text';
+        font-size: 8rem;
+        font-weight: 250;
+
+        text-align: center;
+
+        letter-spacing: 0.1em;
+
+        margin-bottom: 6.25rem;
+    }
+
+    &__center {
+        display: flex;
+        align-items: flex-end;
+        column-gap: 11rem;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.25rem;
+
+        font-size: 1.25rem;
+
+        margin-bottom: 3.75rem;
+
+        max-width: 61.25rem;
+
+        p {
+            line-height: 1.5;
+        }
+    }
+
+    &__button {
+        width: 13.125rem;
+        height: 2.5rem;
+    }
+}
