@@ -1,0 +1,88 @@
+.landscape-solutions {
+    display: flex;
+
+    &__title_line {
+        &::before {
+            order: 2;
+        }
+
+        &::after {
+            order: 1;
+        }
+    }
+
+    &__request {
+        text-transform: uppercase;
+
+        width: 13.125rem;
+        height: 2.5rem;
+    }
+
+    &__image {
+        display: flex;
+
+        &._1 {
+            align-self: flex-end;
+
+            margin-right: 1.25rem;
+
+            img {
+                width: 9.64vw;
+            }
+        }
+
+        &._2 {
+            align-self: flex-end;
+
+            img {
+                width: 7.81vw;
+            }
+        }
+
+        &._3 {
+            display: flex;
+
+            justify-content: flex-end;
+
+            margin-right: 1.25rem;
+
+            img {
+                width: 17.916vw;
+            }
+        }
+
+        &._4 {
+            img {
+                width: 24.739vw;
+            }
+        }
+
+        &._5 {
+            align-self: flex-end;
+
+            margin-left: 1.25rem;
+
+            img {
+                width: 7.81vw;
+            }
+        }
+    }
+
+    &__center {
+        margin-left: -5rem;
+        margin-right: 1.25rem;
+
+        &-right {
+            margin-top: 4.5rem;
+        }
+    }
+
+    &__expense-account {
+        text-transform: uppercase;
+
+        margin-top: 3.75rem;
+
+        width: 23.125rem;
+        height: 2.5rem;
+    }
+}
