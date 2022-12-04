@@ -37,4 +37,19 @@
             width: auto;
         }
     }
+    
+    &_line-min {
+        display: flex;
+
+        &::before {
+            background-color: var(--line-second-color);
+    
+            content: "";
+    
+            display: inline-block;
+
+            height: 3px;
+            width: 11.125rem;
+        }
+    }
 }

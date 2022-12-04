@@ -1,0 +1,37 @@
+.checkbox {
+    display: flex;
+    align-items: center;
+    column-gap: 0.31rem;
+
+    &__input:checked + &__icon {
+        &::before {
+            opacity: 0;
+        }
+    }
+
+    &__icon {
+        border: 1px solid var(--second-color);
+        border-radius: 0.31rem;
+
+        flex-shrink: 0;
+
+        position: relative;
+
+        width: 0.9375rem;
+        height: 0.9375rem;
+
+        &::before {
+            content: url('/img/arrow-agree.svg');
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            opacity: 1;
+
+            transition: 200ms;
+        }
+    }
+}

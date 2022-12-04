@@ -26,6 +26,7 @@
         &._1 {
             align-self: flex-end;
 
+            margin-top: 5.625rem;
             margin-right: 1.25rem;
 
             img {
@@ -46,6 +47,7 @@
 
             justify-content: flex-end;
 
+            margin-top: 0.75rem;
             margin-right: 1.25rem;
 
             img {
@@ -73,6 +75,8 @@
     &__center {
         margin-left: -5rem;
         margin-right: 1.25rem;
+
+        max-width: 39.25rem;
 
         &-right {
             margin-top: 4.5rem;

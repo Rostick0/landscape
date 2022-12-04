@@ -1,0 +1,15 @@
+.input {
+    background-color: transparent;
+
+    border: 1px solid var(--second-color);
+
+    padding: 1.0625rem 1.25rem;
+
+    transition: 200ms;
+
+    width: 100%;
+
+    &::placeholder {
+        color: var(--third-color);
+    }
+}
