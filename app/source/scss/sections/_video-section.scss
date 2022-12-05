@@ -1,0 +1,28 @@
+.video-section {
+    position: relative;
+
+    margin-bottom: 12.25rem ;
+
+    &__icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+        z-index: 100;
+    }
+
+    &__image {
+        display: flex;
+
+        img {
+            filter: brightness(60%);
+
+            object-fit: cover;
+            object-position: center;
+
+            width: 100%;
+        }
+    }
+}
