@@ -23,6 +23,10 @@
     &__image {
         display: flex;
 
+        img {
+            box-shadow: var(--img-shadow );
+        }
+
         &._1 {
             align-self: flex-end;
 

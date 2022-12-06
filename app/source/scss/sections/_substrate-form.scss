@@ -1,0 +1,36 @@
+.substrate-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__title {
+        margin-bottom: 2.625rem;
+
+        max-width: 45rem;
+    }
+
+    &__button {
+        width: 13.125rem;
+        height: 2.5rem;
+    }
+
+    &__images {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+
+        img {
+            box-shadow: var(--img-shadow);
+        }
+
+        img {
+            &:first-child {
+                width: 91.84%;
+            }
+
+            &:nth-child(2) {
+                transform: translate(-7.3rem, -0.6px);
+            }
+        }
+    }
+}
