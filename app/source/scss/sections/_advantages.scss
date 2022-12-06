@@ -1,0 +1,46 @@
+.advantages {
+    background-color: var(--first-background-color);
+
+    padding: 9rem 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+
+        font-size: 2.875rem;
+
+        &_left {
+            max-width: 25.25rem;
+        }
+
+        &_right {
+            color: var(--sixth-color);
+
+            display: flex;
+            row-gap: 11rem;
+
+            &_left {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                p {
+                    max-width: 25.25rem; 
+                }
+            }
+
+            &_right {
+                margin: 11rem 0;
+
+                p {
+                    max-width: 17.25rem;
+                }
+            }
+        }
+    }
+}
