@@ -1,0 +1,23 @@
+.clients {
+    background-color: var(--fourth-color);
+
+    padding: 7.5rem 0 18rem;
+
+    &__title {
+        margin-bottom: 11rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 10rem;
+        justify-content: center;
+
+        padding: 0 6.5vw;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+    }
+}

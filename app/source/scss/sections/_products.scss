@@ -1,5 +1,5 @@
 .products {
-    margin-bottom: 12.5rem;
+    padding: 12.5rem 0 8.25rem;
 
     &__title {
         margin-bottom: 13rem;
@@ -34,11 +34,15 @@
         &_description {
             color: var(--third-color);
 
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.9375rem;
+
             font-size: 1.125rem;
         }
     }
 
-    &__download {
+    &__button {
         margin: 9.25rem auto 0;
 
         width: 19.375rem;
