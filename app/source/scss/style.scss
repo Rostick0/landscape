@@ -20,3 +20,9 @@ html, body, .wrapper {
 .main {
     flex-grow: 1;
 }
+
+@media (max-width: 1440px) {
+    html, body, .wrapper {
+        font-size: 14px;
+    }
+}

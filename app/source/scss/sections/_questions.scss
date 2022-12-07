@@ -1,0 +1,62 @@
+.questions {
+    margin-bottom: 25rem;
+
+    &__title {
+        margin-bottom: 18rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 14.25rem;
+    }
+
+    &__item {
+        counter-increment: num;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 3rem;
+
+        &_title {
+            font-size: 2.25rem;
+
+            margin-left: 1.25rem;
+
+            max-width: 41.25rem;
+
+            &::before {
+                content: counter(num);
+                font-size: 1.25rem;
+                font-weight: 700;
+                margin-left: -1.25rem;
+                height: 100%;
+            }
+        }
+
+        &_line {
+            background-color: var(--line-second-color);
+            margin-top: 1.25rem;
+            width: 11.125rem;
+            height: 5px;
+        }
+
+        &_answer {
+            font-size: 1.5rem;
+
+            line-height: 152%;
+
+            max-width: 45vw;
+        }
+    }
+
+    &__all-link {
+        font-size: 1.25rem;
+
+        margin: 12.5rem auto 0;
+
+        width: 19.375rem;
+        height: 3.75rem;
+    }
+}

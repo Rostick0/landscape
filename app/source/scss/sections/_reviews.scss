@@ -2,6 +2,7 @@
     background-color: var(--fourth-color);
 
     padding: 8rem 0 6.25rem;
+    margin-bottom: 12.5rem;
 
     &__title {
         margin-bottom: 7.5rem;
@@ -20,7 +21,7 @@
     &__item {
         flex: 0 0 50%;
 
-        padding: 0 12rem;
+        padding: 0 10vw;
 
         &_name {
             font-size: 1.5rem;
