@@ -1,0 +1,47 @@
+.reviews {
+    background-color: var(--fourth-color);
+
+    padding: 8rem 0 6.25rem;
+
+    &__title {
+        margin-bottom: 7.5rem;
+    }
+
+    &__list {
+        overflow-x: hidden;
+
+        &_inner {
+            display: flex;
+
+            transform: translateX(var(--transform-x));
+        }
+    }
+
+    &__item {
+        flex: 0 0 50%;
+
+        padding: 0 12rem;
+
+        &_name {
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            margin-bottom: 2.5rem;
+        }
+
+        &_comment {
+            line-height: 152%;
+        }
+    }
+
+    &__counter {
+        color: var(--third-color);
+
+        display: flex;
+        justify-content: center;
+
+        font-size: 1.5rem;
+        
+        margin: 5rem auto 0;
+    }
+}

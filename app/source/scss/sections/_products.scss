@@ -1,4 +1,4 @@
-.services {
+.products {
     margin-bottom: 12.5rem;
 
     &__title {
@@ -36,5 +36,12 @@
 
             font-size: 1.125rem;
         }
+    }
+
+    &__download {
+        margin: 9.25rem auto 0;
+
+        width: 19.375rem;
+        height: 3.75rem;
     }
 }
