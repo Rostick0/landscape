@@ -22,12 +22,24 @@
         column-gap: 7.25rem;
 
         &_image {
+            display: flex;
+
+            padding-top: 35.4%;
+
+            position: relative;
+
+            width: 28.65vw;
+
             img {
                 object-fit: cover;
                 object-position: center;
 
-                width: 100%;
-                max-width: 34.5rem;
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                width: inherit;
+                height: 100%;
             }
         }
 

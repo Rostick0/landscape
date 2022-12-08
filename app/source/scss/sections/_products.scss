@@ -13,12 +13,20 @@
 
     &__item {
         &_image {
+            position: relative;
+
+            padding-top: 61.8%;
             margin-bottom: 0.93rem;
 
             img {
                 box-shadow: var(--img-shadow );
 
+                position: absolute;
+                left: 0;
+                top: 0;
+
                 width: 100%;
+                height: 100%;
             }
         }
 
