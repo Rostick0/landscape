@@ -13,6 +13,8 @@
         &_inner {
             display: flex;
 
+            transition: 200ms;
+
             transform: translateX(var(--transform-x));
         }
     }

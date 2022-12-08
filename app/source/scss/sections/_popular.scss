@@ -1,0 +1,116 @@
+.popular {
+    padding: 11.5rem 0 10.75rem;
+
+    &__title {
+        margin-bottom: 12.5rem;
+    }
+
+    &__products {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 3.125vw;
+    }
+
+    &__list {
+        overflow-x: hidden;
+
+        &_inner {
+            display: flex;
+
+            transition: 200ms;
+
+            transform: translateX(var(--transform-x));
+        }
+    }
+
+    &__item {
+        color: var(--second-color);
+
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 33.33%;
+
+        font-size: 1.125rem;
+
+        padding: 0 3.75vw;
+
+        &_favorite {
+            margin-bottom: 0.625rem;
+
+            svg {
+                display: flex;
+
+                margin-left: auto;
+            }
+        }
+
+        &_image {
+            display: flex;
+
+            position: relative;
+
+            padding-top: 125.57%;
+
+            img {
+                box-shadow: var(--img-shadow);
+
+                object-fit: cover;
+                object-position: center;
+
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &_content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            padding: 0.9375rem;
+        }
+
+        &_flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &_raiting {
+            color: var(--first-color);
+            
+            display: flex;
+            align-items: center;
+            column-gap: 0.625rem;
+
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        &_title {
+            color: var(--first-color);
+
+            flex-grow: 1;
+
+            font-size: 1.25rem;
+            font-weight: bold;
+
+            margin-top: 0.9375rem;
+            margin-bottom: 2.81rem;
+        }
+
+        &_price {
+            margin-bottom: 0.625rem;
+        }
+
+        &_card-add {
+            width: 13.125rem;
+            height: 2.5rem;
+        }
+    }
+}
