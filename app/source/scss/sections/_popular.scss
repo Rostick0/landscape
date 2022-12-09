@@ -114,3 +114,11 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .popular {
+        &__item {
+            flex-basis: 50%;
+        }
+    }
+}
