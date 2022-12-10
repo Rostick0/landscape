@@ -1,0 +1,111 @@
+.info {
+    display: flex;
+    align-items: flex-start;
+
+    font-size: 1.25rem;
+    line-height: 152%;
+
+    padding: 9.5rem 0 6.25rem;
+
+    &__left {
+        flex-grow: 1;
+
+        &::before {
+            background-color: var(--line-second-color);
+
+            content: "";
+
+            display: inline-block;
+
+            margin-bottom: 3.125rem;
+
+            width: 11.125rem;
+            height: 5px;
+        }
+    }
+
+    &__short {
+        max-width: 23rem;
+    }
+
+    &__list-text {
+        list-style: outside;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.625rem;
+
+        margin-left: 1.2rem;
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3.125rem;
+
+        margin: 3.125rem 0;
+
+        &::before,
+        &::after {
+            background-color: var(--line-color);
+            
+            content: "";
+
+            max-width: 22.875rem;
+            width: 100%;
+            height: 1px;
+        }
+    }
+
+    &__hint {
+        color: var(--third-color);
+
+        margin-bottom: 6.25rem;
+    }
+
+    &__image {
+        padding-top: 70%;
+
+        position: relative;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__right {
+        flex: 0 0 62.5%;
+    }
+
+    &__title {
+        font-weight: bold;
+
+        text-align: center;
+
+        margin: 2.5rem 0;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.87rem;
+
+        padding: 0 3.75rem;
+    }
+
+    &__button {
+        margin-top: 6.25rem;
+        margin-left: auto;
+
+        width: 13.125rem;
+        height: 2.5rem;
+    }
+}
