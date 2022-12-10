@@ -43,7 +43,7 @@ input::-ms-clear {
 a,
 a:focus,
 a:active {
-    color: #fff;
+    color: var(--first-color);
     text-decoration: none;
     outline: none;
 }

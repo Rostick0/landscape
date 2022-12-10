@@ -10,7 +10,9 @@ const { init, watch, reload } = require('browser-sync').create();
 
 function html() {
     return src('app/pages/**')
-        .pipe(include())
+        .pipe(include({
+            prefix: '@@'
+        }))
         .pipe(dest('dist'))
 }
 

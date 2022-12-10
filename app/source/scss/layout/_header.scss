@@ -2,11 +2,14 @@
     font-size: 1.125rem;
 
     &__container {
-        display: flex;
-        justify-content: space-between;
-        column-gap: 10%;
 
-        padding-top: 3.125rem;
+        &_flex {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 10%;
+    
+            padding-top: 3.125rem;
+        }
     }
 
     &__left {
@@ -23,10 +26,6 @@
         display: flex;
         align-items: center;
         column-gap: 2.25rem;
-
-        &_href {
-            color: var(--first-color);
-        }
     }
 
     &__right {
@@ -65,12 +64,6 @@
         row-gap: 0.31rem;
     }
 
-    &__number {
-        &_href {
-            color: var(--first-color);
-        }
-    }
-
     &__city {
         ._select__input {
             font-size: 1.125rem;
@@ -80,5 +73,27 @@
     &__order_call {
         padding: 0.625rem 1.375rem;
         margin-top: 1.87rem;
+    }
+
+    &__switch {
+        display: flex;
+        align-items: center;
+        column-gap: 0.33rem;
+
+        &_item {
+            display: flex;
+            align-items: center;
+            column-gap: inherit;
+
+            &::after {
+                content: "-";
+            }
+
+            &:last-child {
+                &::after {
+                    content: none;
+                }
+            }
+        }
     }
 }
