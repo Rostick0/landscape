@@ -1,54 +1,7 @@
 @@include('../layout/header.html', {
 "title": "Ландшафт",
-"switch": '<ul class=\"header__switch\">\n    <li class=\"header__switch_item\">\n        <a class=\"header__switch_item_href\" href=\"/\">\n            Главная\n        </a>\n    </li>\n    <li class=\"header__switch_item\">\n        <a class=\"header__switch_item_href\" href=\"/\">\n            О компании  \n        </a>\n    </li>\n    <li class=\"header__switch_item\">\n        <a class=\"header__switch_item_href\" href=\"/\">\n            Оплата\n        </a>\n    </li>\n</ul>'
+"switch": '<ul class=\"header__switch\"><li class=\"header__switch_item\"><a class=\"header__switch_item_href\" href=\"/\">Главная</a></li><li class=\"header__switch_item\"><a class=\"header__switch_item_href\" href=\"/\">О компании</a></li><li class=\"header__switch_item\"><a class=\"header__switch_item_href\" href=\"/\">Оплата</a></li></ul>'
 })
-<!-- <ul class="awards__list_inner">
-    <li class="awards__item">
-        <div class="awards__item_image">
-            <img src="/img/payment-cash.png" alt="Оплата наличными">
-        </div>
-        <div class="awards__item__text">
-            <div class="awards__item_title _short-line">
-                ОПЛАТА НАЛИЧНЫМИ
-            </div>
-            <div class="awards__item_description">
-                <span>
-                    Наша задача - обеспечить максимальную безопасность и комфорт наших клиентов, поэтому мы предлагаем гибкие условия оплаты и инкассацию денежной наличности.
-                </span>
-            </div>
-        </div>
-    </li>
-    <li class="awards__item">
-        <div class="awards__item_image">
-            <img src="/img/cashless-payment.png" alt="Безналичный расчёт">
-        </div>
-        <div class="awards__item__text">
-            <div class="awards__item_title _short-line">
-                БЕЗНАЛИЧНЫЙ РАСЧЁТ
-            </div>
-            <div class="awards__item_description">
-                <span>
-                    Хотите сделать всё максимально быстро или передать оплату услуг своему персональному менеджеру? Мы позаботились об этом. Теперь мы можем принимать безналичный расчёт!
-                </span>
-            </div>
-        </div>
-    </li>
-    <li class="awards__item">
-        <div class="awards__item_image">
-            <img src="/img/payment-card.png" alt="Оплата картой">
-        </div>
-        <div class="awards__item__text">
-            <div class="awards__item_title _short-line">
-                ОПЛАТА КАРТОЙ
-            </div>
-            <div class="awards__item_description">
-                <span>
-                    Госпиталь
-                </span>
-            </div>
-        </div>
-    </li>
-</ul> -->
 
 <div class="container">
     <section class="awards">
@@ -158,48 +111,7 @@
         </div>
     </section>
 
-    <section class="question-form">
-        <div class="section__title question-form__title">
-            <div class="section__title_line"></div>
-            <h2 class="question-form__h2">
-                Остались вопросы?
-            </h2>
-        </div>
-        <div class="question-form__subtitle">
-            Задайте их по номеру телефона +7 (495) 000-00-00 или оставте свои контакты и наш менеджер перезвонит Вам
-            через 10 минут
-        </div>
-        <div class="question-form__content">
-            <div class="question-form__content_left">
-                <div class="question-form__inputs">
-                    <input class="question-form__input input" type="text" placeholder="Имя">
-                    <input class="question-form__input input" type="tel" placeholder="Телефон">
-                    <input class="question-form__input input" type="email" placeholder="E-mail">
-                    <textarea class="question-form__textarea question-form__input input"
-                        placeholder="Ваш вопрос"></textarea>
-                </div>
-                <a class="question-form__agree">
-                    Нажимая «Оставить завку», я соглашаюсь c обработкой персональных данных на условиях Политики
-                    конфиденциальности.
-                </a>
-                <button class="question-form__button button">
-                    Оставить заявку
-                </button>
-            </div>
-            <div class="question-form__content_right">
-                <a class="question-form__address a">
-                    Приезжайте, все покажем и подробно расскажем г. Москва, ул. Садовая, д. 35
-                </a>
-                <div class="question-form__map">
-                    <div class="question-form__map_line"></div>
-                    <div class="question-form__map_inner">
-                        <img src="/img/map.png" alt="">
-                    </div>
-                    <div class="question-form__map_line _2"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @@include('../sections/question-form.html')
 </div>
 
 @@include('../layout/footer.html')

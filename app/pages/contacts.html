@@ -1,0 +1,127 @@
+@@include('../layout/header.html', {
+    "title": "Ландшафт",
+    "switch": '<ul class=\"header__switch\"><li class=\"header__switch_item\"><a class=\"header__switch_item_href\" href=\"/\">Главная</a></li><li class=\"header__switch_item\"><a class=\"header__switch_item_href\" href=\"/contacts.html\">Контакты</a></li></ul>'
+})
+
+<div class="container">
+    <section class="question-form">
+        <div class="section__title question-form__title">
+            <div class="section__title_line"></div>
+            <h2 class="question-form__h2">
+                Контакты
+            </h2>
+        </div>
+        <div class="question-form__content">
+            <div class="question-form__content_left">
+                <div class="question-form__contacts contacts">
+                    <div class="contacts__title">
+                        ООО “ЛАНДШАФТНЫЙ ДОМ”
+                    </div>
+                    <ul class="contacts__list">
+                        <li class="contacts__item">
+                            <span>
+                                ОГРН 1217700514481 
+                            </span>
+                            <span>
+                                ИНН 9724061068
+                            </span>
+                        </li>
+                        <li class="contacts__item">
+                            <span>
+                                Г. Москва Ш. Варшавское Д. 53
+                            </span>
+                            <span>
+                                К. 4 КВ. 124
+                            </span>
+                        </li> <li class="contacts__item">
+                            <span>
+                                Россия, г. Москва, ул. Садовая, д. 35
+                            </span>
+                        </li>
+                    </ul>
+                    <ul class="contacts__list">
+                        <li class="contacts__item">
+                            <a href="tel:+79999100032">
+                                +7 (999) 910-00-32
+                            </a>
+                        </li>
+                        <li class="contacts__item">
+                            <a href="tel:+79999100032">
+                                +7 (999) 910-00-32
+                            </a>
+                        </li>
+                        <li class="contacts__item">
+                            <ul class="socials">
+                                <li class="social">
+                                    <a href="">
+                                        <img src="/img/vk-grey.png" alt="Вконтакте">
+                                    </a>
+                                </li>
+                                <li class="sociall">
+                                    <a href="">
+                                        <img src="/img/telegram-grey.png" alt="Телеграм">
+                                    </a>
+                                </li>
+                                <li class="social">
+                                    <a href="">
+                                        <img src="/img/whatsapp-grey.png" alt="Ватсап">
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="contacts__list">
+                        <li class="contacts__item">
+                            <a href="malito:landscapehouse@yandex.ru">
+                                landscapehouse@yandex.ru
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="question-form__content_right">
+                <a class="question-form__address a">
+                    Приезжайте, все покажем и подробно расскажем г. Москва, ул. Садовая, д. 35
+                </a>
+                <div class="question-form__map">
+                    <div class="question-form__map_inner">
+                        <img src="/img/map.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="question-form">
+        <div class="section__title question-form__title">
+            <div class="section__title_line"></div>
+            <h2 class="question-form__h2">
+                Остались вопросы?
+            </h2>
+        </div>
+        <div class="question-form__subtitle">
+            Задайте их по номеру телефона +7 (495) 000-00-00 или оставте свои контакты и наш менеджер перезвонит Вам
+            через 10 минут
+        </div>
+        <div class="question-form__content">
+            <form class="question-form__content_left" method="POST">
+                <div class="question-form__inputs">
+                    <input class="question-form__input input" type="text" placeholder="Имя">
+                    <input class="question-form__input input" type="tel" placeholder="Телефон">
+                    <input class="question-form__input input" type="email" placeholder="E-mail">
+                    <textarea class="question-form__textarea question-form__input input"
+                        placeholder="Ваш вопрос"></textarea>
+                </div>
+                <a class="question-form__agree">
+                    Нажимая «Оставить завку», я соглашаюсь c обработкой персональных данных на условиях Политики
+                    конфиденциальности.
+                </a>
+                <button class="question-form__button button">
+                    Оставить заявку
+                </button>
+            </form>
+        </div>
+    </section>
+</div>
+
+@@include('../layout/footer.html')

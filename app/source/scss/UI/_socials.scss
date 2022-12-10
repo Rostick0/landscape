@@ -1,0 +1,17 @@
+.socials {
+    display: flex;
+    column-gap: 2.5rem;
+}
+
+.social {
+    display: inline-block;
+
+    a,
+    img {
+        display: inline-block;
+
+        width: 2.5rem;
+        min-width: 2.5rem;
+        height: 2.5rem;
+    }
+}
