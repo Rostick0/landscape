@@ -68,6 +68,19 @@
                 width: 10rem;
                 height: 1px;
             }
+
+            &._short-line {
+                margin-bottom: 5rem;
+
+                &::after {
+                    background-color: var(--first-color);
+
+                    margin-top: 1.87rem;
+
+                    width: 11rem;
+                    height: 5px;
+                }
+            }
         }
 
         &_description {
@@ -78,6 +91,8 @@
             row-gap: 1.25rem;
 
             font-size: 1.125rem;
+
+            max-width: 34rem;
         }
     }
 }
