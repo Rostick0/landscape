@@ -5,9 +5,19 @@
         margin-bottom: 10rem;
     }
 
+    &__subtitle {
+        text-align: center;
+
+        margin: 0 auto 9.5rem;
+
+        max-width: 70.25rem;
+    }
+
     &__list {
         display: flex;
         justify-content: center;
+
+        font-size: 1.25rem;
 
         &_inner {
             display: inline-flex;
@@ -93,6 +103,18 @@
             font-size: 1.125rem;
 
             max-width: 34rem;
+        }
+
+        .section__title {
+            margin-bottom: 0;
+
+            max-width: 44rem;
+        }
+
+        .section__title_line {
+            &::after {
+                content: none;
+            }
         }
     }
 }
