@@ -26,6 +26,34 @@
 
     &__short {
         max-width: 23rem;
+
+        &_list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 3.125rem;
+        }
+
+        &_item {
+            border-bottom: 1px solid var(--line-color);
+
+            padding-bottom: 3.125rem;
+
+            &_name {
+                color: var(--third-color);
+
+                margin-bottom: 0.625rem;
+            }
+
+            &_value {
+                font-weight: bold;
+            }
+
+            &:last-child {
+                border-bottom: none;
+
+                padding-bottom: 0;
+            }
+        }
     }
 
     &__list-text {
@@ -107,5 +135,22 @@
 
         width: 13.125rem;
         height: 2.5rem;
+
+        &._long {
+            width: 17.5rem;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: 3.125rem;
+
+        margin-top: 3.125rem;
+
+        .info__button {
+            margin: 0;
+        }
     }
 }

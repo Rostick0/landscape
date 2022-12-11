@@ -1,0 +1,22 @@
+.comments {
+    padding: 4rem 0 6.25rem;
+
+    &__title {
+        margin-bottom: 8rem;
+    }
+    
+    &__content {
+        font-size: 1.25rem;
+
+        margin: 0 auto 3.125rem;
+
+        max-width: 74.25rem;
+    }
+
+    &__all {
+        margin-left: auto;
+
+        width: 13.125rem;
+        height: 2.5rem;
+    }
+}

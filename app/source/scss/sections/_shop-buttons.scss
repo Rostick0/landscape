@@ -1,0 +1,66 @@
+.shop-buttons {
+    padding: 12.5rem 0;
+
+    &__title {
+        margin-bottom: 6.25rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 1.87rem 2.5rem;
+    
+        margin: 0 auto;
+
+        max-width: 85rem;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        font-weight: bold;
+
+        width: 19.375rem;
+        height: 2.5rem;
+
+        &_all {
+            display: flex;
+            align-items: center;
+            column-gap: 1.25rem;
+        }
+
+        &_plus {
+            flex-shrink: 0;
+
+            position: relative;
+
+            width: 2.5rem;
+            height: 2.5rem;
+
+            &::before,
+            &::after {
+                background-color: var(--first-color);
+
+                content: "";
+
+                position: absolute;
+                left: 50%;
+                top: 50%;
+
+                transform: translate(-50%, -50%);
+
+                width: 1.5rem;
+                height: 1px;
+            }
+
+            &::after {
+                width: 1px;
+                height: 1.5rem;
+            }
+        }
+    }
+}

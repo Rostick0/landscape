@@ -1,0 +1,31 @@
+.about {
+    &__title {
+        margin-bottom: 9.5rem;
+    }
+
+    &__content {
+        display: flex;
+        grid-gap: 6.25rem;
+    }
+
+    &__image {
+        width: 25rem;
+        height: 25rem;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+
+            width: inherit;
+            height: inherit;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.25rem;
+
+        font-size: 1.25rem;
+    }
+}
