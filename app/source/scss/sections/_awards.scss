@@ -103,6 +103,43 @@
             font-size: 1.125rem;
 
             max-width: 34rem;
+
+            &_title {
+                font-weight: bold;
+            }
+        }
+
+        &_list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.1rem;
+
+            list-style: inside;
+
+            &::after {
+                background-color: var(--line-color);
+
+                content: "";
+
+                margin: 3.125rem 0 1.87rem;
+
+                width: 10rem;
+                height: 1px;
+            }
+
+            &:last-child {
+                &::after {
+                    content: none;
+                }
+            }
+        }
+
+        &_button {
+            margin-top: 3.75rem;
+            margin-left: auto;
+
+            width: 13.125rem;
+            height: 2.5rem;
         }
 
         .section__title {
@@ -115,6 +152,28 @@
             &::after {
                 content: none;
             }
+        }
+    }
+
+    &__archive {
+        display: flex;
+        flex-direction: column;
+
+        font-size: 1.25rem;
+
+        margin-top: 6.25rem;
+
+        &::after {
+            background-color: var(--line-color);
+
+            content: "";
+
+            display: inline-block;
+
+            margin-top: 1.25rem;
+
+            width: 5.62rem;
+            height: 1px;
         }
     }
 }
