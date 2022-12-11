@@ -5,6 +5,25 @@
         margin-bottom: 12.5rem;
     }
 
+    &__sort {
+        display: flex;
+        align-items: center;
+        grid-gap: 1.5rem 2.5rem;
+
+        font-size: 1.25rem;
+
+        padding: 0 6.25rem;
+        margin-bottom: 6.25rem;
+
+        &_item {
+            &_name {
+                display: flex;
+                align-items: center;
+                column-gap: 0.625rem
+            }
+        }
+    }
+
     &__products {
         display: flex;
         align-items: center;
@@ -14,6 +33,8 @@
 
     &__list {
         overflow-x: hidden;
+
+        margin: 0 auto;
 
         &_inner {
             display: flex;
@@ -111,6 +132,29 @@
         &_card-add {
             width: 13.125rem;
             height: 2.5rem;
+        }
+    }
+
+    &__more {
+        text-align: center;
+
+        margin-top: 3.125rem;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        grid-gap: 1rem 6.25rem;
+
+        margin-top: 6rem;
+    }
+
+    &__button {
+        width: 13.125rem;
+        height: 2.5rem;
+
+        &._long {
+            width: 17.5rem;
         }
     }
 }

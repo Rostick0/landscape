@@ -27,7 +27,7 @@ function scss() {
 }
 
 function js() {
-    return src(['app/js/UI.js'])
+    return src(['app/js/UI.js', 'app/js/transition.js'])
         .pipe(babel({
             presets: ['@babel/env']
         }))

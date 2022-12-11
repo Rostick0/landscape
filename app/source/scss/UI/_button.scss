@@ -11,8 +11,17 @@
 
     font-family: 'Helios';
     font-size: 1rem;
- 
+
     letter-spacing: 0.03em;
+    
+    transition: 200ms;
+
+    &:hover,
+    &._active {
+        background-color: var(--second-color);
+
+        color: var(--fifth-color);
+    }
 }
 
 .button-second {
@@ -21,4 +30,10 @@
     background-color: var(--second-color);
 
     color: var(--fifth-color);
+
+    &:hover {
+        background-color: transparent;
+
+        color: var(--second-color);
+    }
 }
