@@ -41,6 +41,7 @@
 
     &__share {
         margin-left: auto;
+        margin-top: 1rem;
 
         width: 100%;
         max-width: 19.375rem;
@@ -101,5 +102,33 @@
         text-align: right;
 
         margin-top: 6.25rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .article {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .article {
+        padding: 4.25rem 0 3.125rem;
+
+        &__left {
+            min-width: auto;
+        }
+
+        &__flex {
+            flex-wrap: wrap;
+        }
+
+        &__content {
+            row-gap: 2rem;
+        }
+
+        &__author {
+            margin-top: 3rem;
+        }
     }
 }

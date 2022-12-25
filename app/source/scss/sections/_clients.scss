@@ -21,3 +21,31 @@
         align-items: center;
     }
 }
+
+@media (max-width: 1024px) {
+    .clients {
+        padding: 3.75rem 0 9rem;
+
+        &__title {
+            margin-bottom: 5rem;
+        }
+
+        &__list {
+            row-gap: 4rem;
+
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .clients {
+        &__item {
+            &_image {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

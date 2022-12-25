@@ -26,3 +26,16 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .video-section  {
+        padding: 3rem 0;
+
+        &__icon {
+            svg {
+                width: 4rem;
+                height: 4rem;
+            }   
+        }
+    }
+}

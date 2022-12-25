@@ -1,23 +1,24 @@
 .landscape {
-    padding: 12.5rem 0 4.75rem;
+    padding: 8rem 0 4.75rem;
 
     &__title {
         font-family: 'Posterama Text';
-        font-size: 8rem;
+        font-size: 6rem;
         font-weight: 250;
 
         text-align: center;
+        text-transform: uppercase;
 
         letter-spacing: 0.1em;
 
-        margin-bottom: 6.25rem;
+        margin-bottom: 7.25rem;
     }
 
     &__center {
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        column-gap: 11rem;
+        grid-gap: 3.125rem 11rem;
     }
 
     &__text {
@@ -36,8 +37,63 @@
         }
     }
 
+    &__image {
+        display: flex;
+        flex-grow: 1;
+        
+        width: 100%;
+        max-width: 400px;
+
+        img {
+            box-shadow: var(--img-shadow);
+
+            object-fit: cover;
+            object-position: center;
+
+            width: 100%;
+        }
+    }
+
     &__button {
         width: 13.125rem;
         height: 2.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .landscape {
+        &__title {
+            font-size: 3rem;
+        }
+
+        &__center {
+            flex-direction: column;
+        }
+
+        &__content {
+            order: 2;
+        }
+
+        &__image {
+            order: 1;
+
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .landscape {
+        padding: 6.25rem 0 2.375rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .landscape {
+        &__title {
+            font-size: 2rem;
+
+            margin-bottom: 1rem;
+        }
     }
 }

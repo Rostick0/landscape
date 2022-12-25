@@ -2,14 +2,111 @@
     font-size: 1.125rem;
 
     &__container {
+        &_mobile {
+            display: none;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 10001;
+
+            &_inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+    
+                padding: 1rem 0;
+            }
+
+            .header__logo {
+                opacity: 1;
+            }
+        }
 
         &_flex {
             display: flex;
             justify-content: space-between;
-            column-gap: 10%;
+            grid-gap: 4rem 10%;
+
+            transition: 500ms;
     
             padding-top: 3.125rem;
         }
+    }
+
+    &__burger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        flex-shrink: 0;
+
+        position: relative;
+
+        transition: 500ms;
+
+        margin-bottom: 2rem;
+
+        width: 1.75rem;
+        height: 1.5rem;
+
+        &::before,
+        &::after {
+            background-color: var(--first-color);
+            
+            content: "";
+
+            display: inline-block;
+
+            position: absolute;
+
+            transition: inherit;
+
+            width: 100%;
+            height: 3px;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        &_line {
+            background-color: var(--first-color);
+
+            opacity: 1;
+
+            transition: 200ms;
+
+            width: 100%;
+            height: 3px;
+        }
+
+        &._active {
+            .header__burger-menu_line {
+                opacity: 0;
+            }
+
+            &::before {
+                transform: rotate(45deg) translateY(-65%);
+
+                top: 50%;
+            }
+    
+            &::after {
+                transform: rotate(-45deg) translateY(65%);
+
+                bottom: 50%;
+            }
+        }
+    }
+
+    &__logo {
+        display: flex;
     }
 
     &__left {
@@ -17,7 +114,6 @@
         align-items: center;
         align-self: flex-start;
         justify-content: space-between;
-        flex-grow: 1;
 
         margin-top: -1.625rem;
     }
@@ -29,10 +125,10 @@
     }
 
     &__right {
-
         &_top {
             display: flex;
             align-items: flex-start;
+            justify-content: center;
             column-gap: 2.25rem;
         }
 
@@ -49,12 +145,13 @@
 
     &__info {
         display: flex;
+        align-items: flex-end;
         flex-direction: column;
         row-gap: 0.31rem;
 
         &_bottom {
             display: flex;
-            grid-gap: 1.25rem;
+            grid-gap: 0.93rem;
         }
     }
 
@@ -67,6 +164,18 @@
     &__city {
         ._select__input {
             font-size: 1.125rem;
+
+            text-align: right;
+
+            width: 4.75rem;
+        }
+    }
+
+    &__language {
+        ._select__input {
+            font-size: 1.125rem;
+
+            width: 2.15rem;
         }
     }
 
@@ -78,12 +187,13 @@
     &__switch {
         display: flex;
         align-items: center;
-        column-gap: 0.33rem;
+        flex-wrap: wrap;
+        grid-gap: 0.33rem;
 
         &_item {
             display: flex;
             align-items: center;
-            column-gap: inherit;
+            column-gap: 0.33rem;
 
             &::after {
                 content: "-";
@@ -93,6 +203,67 @@
                 &::after {
                     content: none;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        &__container {
+            &_mobile {
+                display: block;
+            }
+
+            &_flex {
+                background-color: var(--fifth-color);
+
+                flex-direction: column;
+                justify-content: flex-start;
+
+                padding: 3.65%;
+
+                position: fixed;
+                left: 0;
+                top: 0;
+
+                transform: translateX(150%);
+
+                overflow-y: auto;
+
+                width: 100%;
+                height: 100%;
+
+                z-index: 10000;
+
+                &._active {
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        &__logo {
+            opacity: 0;
+
+            margin-bottom: 2rem;
+        }
+
+        &__left {
+            flex-direction: column;
+            flex-grow: 0;
+
+            margin: 0;
+            width: 100%;
+        }
+
+        &__navigation {
+            flex-direction: column;
+            row-gap: 1.25rem;
+        }
+
+        &__right {
+            &_bottom {
+                justify-content: center;
             }
         }
     }

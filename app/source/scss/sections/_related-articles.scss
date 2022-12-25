@@ -21,6 +21,8 @@
     }
 
     &__item {
+        flex: 0 0 33.33%;
+
         padding: 0 5.75vw;
 
         &_href {
@@ -39,6 +41,31 @@
                 width: 11rem;
                 height: 5px;
             }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .related-articles {
+
+        &__item {
+            flex: 0 0 50%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .related-articles {
+        padding: 6.25rem 0;
+
+        &__title {
+            margin-bottom: 5rem;
+        }
+
+        &__item {
+            flex: 0 0 100%;
+
+            padding: 0 3vw;
         }
     }
 }

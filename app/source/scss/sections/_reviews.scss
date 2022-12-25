@@ -20,12 +20,13 @@
     }
 
     &__item {
+        font-size: 1.5rem;
+
         flex: 0 0 50%;
 
         padding: 0 10vw;
 
         &_name {
-            font-size: 1.5rem;
             font-weight: bold;
 
             margin-bottom: 2.5rem;
@@ -45,5 +46,21 @@
         font-size: 1.5rem;
         
         margin: 5rem auto 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews {
+        padding: 4rem 0 3.125rem;
+
+        &__title {
+            margin-bottom: 3rem;
+        }
+
+        &__item {
+            flex-basis: 100%;
+
+            padding: 0 5vw;
+        }
     }
 }

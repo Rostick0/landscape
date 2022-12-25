@@ -17,7 +17,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        column-gap: 3rem;
+        grid-gap: 1.5rem 3rem;
 
         &_title {
             font-size: 2.25rem;
@@ -56,7 +56,41 @@
 
         margin: 12.5rem auto 0;
 
-        width: 19.375rem;
+        width: 100%;
+        max-width: 19.375rem;
         height: 3.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .questions {
+        padding: 6.25rem 0 6.75rem;
+
+        &__title {
+            margin-bottom: 6rem;
+        }
+
+        &__list {
+            row-gap: 4.25rem;
+        }
+
+        &__item {
+            align-items: baseline;
+            flex-direction: column;
+
+            &_title {
+                font-size: 1.75rem;
+            }
+
+            &_answer {
+                font-size: 1.125rem;
+
+                max-width: 100%;
+            }
+        }
+
+        &__all-link {
+            margin-top: 6rem;
+        }
     }
 }

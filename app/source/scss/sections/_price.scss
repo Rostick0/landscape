@@ -42,7 +42,7 @@
         }
 
         &:nth-child(-n+9) {
-            & > .price__item_title {
+            &>.price__item_title {
                 &::before {
                     content: "0" counter(num);
                 }
@@ -65,7 +65,7 @@
         &_switch {
             display: flex;
             align-items: center;
-            
+
             position: relative;
 
             margin-left: 6.25rem;
@@ -75,7 +75,7 @@
                 background-color: var(--first-color);
 
                 content: "";
-                
+
                 display: inline-block;
                 flex-shrink: 0;
 
@@ -92,12 +92,13 @@
             }
         }
     }
-    
+
 
     &__button {
         margin: 0 auto 6.875rem;
 
-        width: 19.375rem;
+        width: 100%;
+        max-width: 19.375rem;
         height: 3.75rem;
     }
 
@@ -107,5 +108,82 @@
         line-height: 152%;
 
         max-width: 57.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .price {
+        &__title {
+            margin-bottom: 10rem;
+        }
+
+        &__list {
+            column-gap: 9rem;
+        }
+
+        &__item {
+            &_show {
+                flex-wrap: wrap;
+                grid-gap: 2.5rem 0;
+            }
+
+            &_title {
+                flex: 1 0 100%;
+            }
+
+            &_switch {
+                margin-left: auto;
+
+                &::before {
+                    width: 2.19rem;
+                }
+
+                &::after {
+                    height: 2.19rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .price {
+        padding-top: 6.25rem;
+
+        &__title {
+            margin-bottom: 5rem;
+        }
+
+        &__list {
+            row-gap: 4.5rem;
+
+            margin-bottom: 7.75rem;
+        }
+
+        &__item {
+            &_title {
+                font-size: 1.5rem;
+            }
+
+            &_cost {
+                font-size: 1rem;
+            }
+
+            &_switch {
+                margin-left: auto;
+
+                &::before {
+                    width: 1.5rem;
+                }
+
+                &::after {
+                    height: 1.5rem;
+                }
+            }
+        }
+
+        &__button {
+            margin-bottom: 3.75rem;
+        }
     }
 }

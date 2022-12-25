@@ -14,11 +14,24 @@
         <header class="header">
             <div class="container">
                 <div class="header__container">
+                    <div class="header__container_mobile">
+                        <div class="header__container_mobile_inner">
+                            <a class="header__logo" href="/">
+                                <img src="/img/logo.svg" alt="Ландшафтный дом">
+                            </a>
+    
+                            <div class="header__burger-menu">
+                                <span class="header__burger-menu_line"></span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="header__container_flex">
                         <div class="header__left">
                             <a class="header__logo" href="/">
                                 <img src="/img/logo.svg" alt="Ландшафтный дом">
                             </a>
+                        </div>
+                        <div class="header__center">
                             <nav class="header__nav">
                                 <ul class="header__navigation">
                                     <li class="header__navigation_item">
@@ -122,10 +135,27 @@
                                                     Москва
                                                 </li>
                                                 <li class="_select__item">
-                                                    Московская область
+                                                    МО
                                                 </li>
                                             </ul>
                                         </div>
+                                        <!-- <div class="header__language _select">
+                                            <div class="_select__checked">
+                                                <input class="_select__input" type="text" value="RU" readonly>
+                                                <svg class="_select__arrow" width="0.5rem" height="0.25rem"
+                                                    viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 4L8 0L0 -3.49691e-07L4 4Z" fill="#343434" />
+                                                </svg>
+                                            </div>
+                                            <ul class="_select__list">
+                                                <li class="_select__item">
+                                                    RU
+                                                </li>
+                                                <li class="_select__item">
+                                                    EN
+                                                </li>
+                                            </ul>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +166,6 @@
                             </div>
                         </div>
                     </div>
-                    @@switch
                 </div>
             </div>
         </header>

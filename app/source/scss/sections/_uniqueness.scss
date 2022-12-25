@@ -58,3 +58,31 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .uniqueness {
+        &__achievements {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 3.125rem;
+
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .uniqueness {
+        &__top {
+            align-items: flex-start;
+            flex-direction: column;
+            grid-gap: 1rem;
+        }
+
+        &__achievements {
+            grid-template-columns: 1fr;
+            grid-gap: 3.125rem;
+
+            padding: 0;
+        }
+    }
+}

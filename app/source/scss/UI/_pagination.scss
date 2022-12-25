@@ -18,3 +18,15 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .pagination {
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .pagination {
+        margin-top: 3rem;
+    }
+}

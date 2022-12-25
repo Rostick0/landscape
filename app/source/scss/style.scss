@@ -27,3 +27,9 @@ html, body, .wrapper {
         font-size: 14px;
     }
 }
+
+@media (max-width: 1024px) {
+    html, body, .wrapper {
+        font-size: 16px;
+    }
+}

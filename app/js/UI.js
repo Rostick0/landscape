@@ -32,11 +32,9 @@
         return transformX <= -maxTransformX ? `--transform-x: ${-maxTransformX}%;` : `--transform-x: ${transformX}%;`;
     }
 
-    const popularProducts = document.querySelectorAll('.popular__products');
+    function activeSlider(elem) {
+        if (!elem) return;
 
-    if (!popularProducts.length) return;
-
-    popularProducts.forEach(elem => {
         const leftArrow = elem.querySelector('.popular__arrow');
         const rightArrow = elem.querySelector('.popular__arrow._right');
 
@@ -45,13 +43,13 @@
 
         let flexBasis = +getComputedStyle(popularItems[0]).flexBasis.slice(0, -1);
         let countSlide = Math.round(100 / flexBasis);
-        let maxTransformX = +setMaxTransform(popularItems.length, countSlide, flexBasis);
+        let maxTransformX = +setMaxTransform(popularItems.length, countSlide, flexBasis) * -1;
         let transformX = 0;
 
-        if (maxTransformX <= 0) return;
+        if (maxTransformX >= 0) return;
 
         leftArrow.onclick = () => {
-            if (transformX <= 0) return;
+            if (transformX >= 0) return;
 
             transformX += +flexBasis;
             transformX = Math.round(transformX * 100) / 100;
@@ -60,20 +58,24 @@
         }
 
         rightArrow.onclick = () => {
-            if (transformX <= -maxTransformX) return;
+            if (Math.round(transformX) <= maxTransformX) return;
 
             transformX -= +flexBasis;
             transformX = Math.round(transformX * 100) / 100;
 
             popularListInner.style = `--transform-x: ${transformX}%;`;
         }
+    }
+
+    const popularProducts = document.querySelectorAll('.popular__products');
+
+    if (!popularProducts.length) return;
+
+    popularProducts.forEach(elem => {
+        activeSlider(elem);
 
         window.addEventListener('resize', () => {
-            flexBasis = +getComputedStyle(popularItems[0]).flexBasis.slice(0, -1);
-            countSlide = Math.round(100 / flexBasis);
-            maxTransformX = +setMaxTransform(popularItems.length, countSlide, flexBasis);
-            transformX = Math.floor(transformX / flexBasis) * flexBasis;
-            popularListInner.style = setAdaptiveTransform(transformX, maxTransformX)
+            activeSlider(elem);
         })
     })
 })();
@@ -168,4 +170,28 @@
             productShopMainImage.src = this.src
         }
     })
+})();
+
+(() => {
+    const headerBurgerMenu = document.querySelector('.header__burger-menu');
+    const headerContainerFlex = document.querySelector('.header__container_flex');
+
+    if (!headerBurgerMenu) return;
+
+    headerBurgerMenu.onclick = () => {
+        headerBurgerMenu.classList.toggle('_active');
+
+        if (headerBurgerMenu.classList.contains('_active')) {
+            headerContainerFlex.classList.add('_active');
+            document.body.style.overflowY = 'hidden';
+
+            return;
+        }
+
+        document.body.style.overflowY = '';
+        
+        if (!headerContainerFlex.classList.contains('_active')) return;
+
+        headerContainerFlex.classList.remove('_active');
+    }
 })();

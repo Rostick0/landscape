@@ -2,8 +2,13 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    grid-gap: 2rem 116.8px;
 
     padding: 1.5rem 0;
+
+    &__content {
+        flex: 1 0 20%;
+    }
 
     &__title {
         margin-bottom: 2.625rem;
@@ -20,21 +25,34 @@
         display: flex;
         align-items: flex-end;
         flex-direction: column;
+        flex-shrink: 0;
+
+        flex: 0 0 52%;
 
         img {
             box-shadow: var(--img-shadow);
-        }
 
-        img {
             &:first-child {
                 width: 91.84%;
             }
 
             &:nth-child(2) {
-                transform: translate(-116.8px, -0.6px);
+                transform: translate(-12.8%,-0.6px);
 
                 width: 100%;
             }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .substrate-form {
+        flex-direction: column;
+
+        &__images {
+            transform: translateX(6.4%);
+
+            width: 75%;
         }
     }
 }

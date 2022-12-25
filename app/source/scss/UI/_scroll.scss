@@ -1,0 +1,14 @@
+* {
+    scrollbar-color: var(--third-color) var(--fifth-color); /* «цвет ползунка» «цвет полосы скроллбара» */
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        background-color: var(--fifth-color);
+
+        width: 10px;
+
+        &-thumb {
+            background-color: var(--third-color);
+        }
+    }
+}

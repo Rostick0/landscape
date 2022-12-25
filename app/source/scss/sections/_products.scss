@@ -1,5 +1,5 @@
 .products {
-    padding: 12.5rem 0 8.25rem;
+    padding: 6.875rem 0 8.25rem;
 
     &__title {
         margin-bottom: 13rem;
@@ -17,14 +17,14 @@
 
     &__item {
         &_image {
+            box-shadow: var(--img-shadow);
+
             position: relative;
 
             padding-top: 61.8%;
             margin-bottom: 0.93rem;
 
             img {
-                box-shadow: var(--img-shadow );
-
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -56,6 +56,7 @@
 
     &__buttons {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         grid-gap: 1.87rem 3.125rem;
 
@@ -73,5 +74,32 @@
 
         width: 19.375rem;
         height: 3.75rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .products {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .products {
+        padding: 6.25rem 0 4.125rem;
+
+        &__title {
+            margin-bottom: 3.125rem;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+            grid-gap: 3.125rem;
+        }
+
+        &__switches {
+            margin-bottom: 3rem;
+        }
     }
 }

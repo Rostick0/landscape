@@ -19,6 +19,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        grid-gap: 1.75rem 5.25rem;
         justify-content: space-around;
 
         &_left {
@@ -111,10 +112,31 @@
         }
 
         &_inner {
-            width: 31.25rem;
+            width: 100%;
+            max-width: 31.25rem;
 
             img {
                 width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .question-form {
+        padding: 2.5rem 0 6.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .question-form {
+        &__map {
+            &_line {
+                transform: none;
+
+                &._2 {
+                    transform: none;
+                }
             }
         }
     }
