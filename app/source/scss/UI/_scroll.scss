@@ -1,6 +1,7 @@
 * {
     scrollbar-color: var(--third-color) var(--fifth-color); /* «цвет ползунка» «цвет полосы скроллбара» */
     scrollbar-width: thin;
+    scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
         background-color: var(--fifth-color);

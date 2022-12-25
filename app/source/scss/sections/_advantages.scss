@@ -23,6 +23,8 @@
 
     padding: 9rem 0 8.25rem;
 
+    overflow: hidden;
+
     * {
         //animation: none !important;
     }
@@ -34,7 +36,7 @@
     }
 
     &__content {
-        animation: rotate-block 10s infinite;
+        animation: rotate-block 8s infinite linear;
 
         display: inline-flex;
         align-items: center;
@@ -73,7 +75,7 @@
     }
 
     &__text-rotate {
-        animation: rotate-elem 10s infinite;
+        animation: rotate-elem 8s infinite linear;
 
         display: inline-block;
     }
