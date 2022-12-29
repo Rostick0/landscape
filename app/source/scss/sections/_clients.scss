@@ -40,7 +40,15 @@
 
 @media (max-width: 480px) {
     .clients {
+        &__list {
+            justify-content: flex-start;
+        }
+
         &__item {
+            &:nth-child(even) {
+                margin-left: auto;
+            }
+
             &_image {
                 img {
                     width: 100%;

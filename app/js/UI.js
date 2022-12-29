@@ -23,27 +23,57 @@
     })
 })();
 
-(() => {
-    function setMaxTransform(amountElems, countElems, flexBasis) {
+class MySlider {
+    constructor(mainBlock, block, items, prev, next) {
+        this.mainBlock = mainBlock;
+        this.block = block;
+        this.items = items;
+        this.prev = prev;
+        this.next = next;
+
+        this.isCreatedCounter = false;
+        this.counterBegin = null;
+        this.counterMax = null;
+    }
+
+    setMaxTransform(amountElems, countElems, flexBasis) {
         return Math.round((amountElems - countElems) * flexBasis);
     }
 
-    function setAdaptiveTransform(transformX, maxTransformX) {
-        return transformX <= -maxTransformX ? `--transform-x: ${-maxTransformX}%;` : `--transform-x: ${transformX}%;`;
+    createCounter(begin, max) {
+        this.counterBegin = begin;
+        this.counterMax = max;
+
+        const beginHtml = this.mainBlock.querySelector(begin);
+        const maxHtml = this.mainBlock.querySelector(max);
+
+        if (!beginHtml || !maxHtml) return;
+
+        this.isCreatedCounter = true;
+        document.querySelector(this.counterMax).textContent = document.querySelectorAll(this.items).length;
     }
 
-    function activeSlider(elem) {
-        if (!elem) return;
+    active() {
+        if (!this.mainBlock) return;
 
-        const leftArrow = elem.querySelector('.popular__arrow');
-        const rightArrow = elem.querySelector('.popular__arrow._right');
+        const leftArrow = this.mainBlock.querySelector(this.prev);
+        const rightArrow = this.mainBlock.querySelector(this.next);
 
-        const popularListInner = elem.querySelector('.popular__list_inner');
-        const popularItems = elem.querySelectorAll('.popular__item');
+        const block = this.mainBlock.querySelector(this.block);
+        const items = this.mainBlock.querySelectorAll(this.items);
 
-        let flexBasis = +getComputedStyle(popularItems[0]).flexBasis.slice(0, -1);
+        if (!leftArrow 
+            || 
+            !rightArrow
+            ||
+            !block
+            ||
+            !items
+            ) return;
+
+        let flexBasis = +getComputedStyle(items[0]).flexBasis.slice(0, -1);
         let countSlide = Math.round(100 / flexBasis);
-        let maxTransformX = +setMaxTransform(popularItems.length, countSlide, flexBasis) * -1;
+        let maxTransformX = +this.setMaxTransform(items.length, countSlide, flexBasis) * -1;
         let transformX = 0;
 
         if (maxTransformX >= 0) return;
@@ -54,7 +84,11 @@
             transformX += +flexBasis;
             transformX = Math.round(transformX * 100) / 100;
 
-            popularListInner.style = `--transform-x: ${transformX}%;`;
+            block.style = `--transform-x: ${transformX}%;`;
+
+            if (this.isCreatedCounter) {
+                document.querySelector(this.counterBegin).textContent--;
+            }
         }
 
         rightArrow.onclick = () => {
@@ -63,19 +97,42 @@
             transformX -= +flexBasis;
             transformX = Math.round(transformX * 100) / 100;
 
-            popularListInner.style = `--transform-x: ${transformX}%;`;
+            block.style = `--transform-x: ${transformX}%;`;
+
+            if (this.isCreatedCounter) {
+                document.querySelector(this.counterBegin).textContent++;
+            }
         }
     }
+}
 
+(function () {
     const popularProducts = document.querySelectorAll('.popular__products');
 
     if (!popularProducts.length) return;
 
     popularProducts.forEach(elem => {
-        activeSlider(elem);
+        const slider = new MySlider(elem, '.popular__list_inner', '.popular__item', '.popular__arrow', '.popular__arrow._right')
+        slider.active();
 
         window.addEventListener('resize', () => {
-            activeSlider(elem);
+            slider.active();
+        })
+    })
+})();
+
+(function () {
+    const reviewsList = document.querySelectorAll('.reviews__list');
+
+    if (!reviewsList.length) return;
+
+    reviewsList.forEach(elem => {
+        const slider = new MySlider(elem, '.reviews__list_inner', '.reviews__item', '.reviews__arrow', '.reviews__arrow._right')
+        slider.active();
+        slider.createCounter('.reviews__counter_start', '.reviews__counter_max')
+
+        window.addEventListener('resize', () => {
+            slider.active();
         })
     })
 })();
@@ -105,30 +162,6 @@
 })();
 
 (() => {
-    function removeClass(elem, className) {
-        if (!elem) return;
-
-        if (!elem.classList.contains(className)) return;
-
-        elem.classList.remove(className);
-    }
-
-    function addClass(elem, className) {
-        if (!elem) return;
-
-        if (elem.classList.contains(className)) return;
-
-        elem.classList.add(className);
-    }
-
-    function removeClassActive(elem) {
-        return removeClass(elem, '_active');
-    }
-
-    function addClassActive(elem) {
-        return addClass(elem, '_active');
-    }
-
     const productShop = document.querySelector('.product-shop');
 
     if (!productShop) return;
@@ -164,7 +197,7 @@
     if (!(productShopImageItemImage.length || productShopMainImage)) return;
 
     productShopImageItemImage.forEach(image => {
-        image.onclick = function() {
+        image.onclick = function () {
             if (!this.src) return;
 
             productShopMainImage.src = this.src
@@ -189,7 +222,7 @@
         }
 
         document.body.style.overflowY = '';
-        
+
         if (!headerContainerFlex.classList.contains('_active')) return;
 
         headerContainerFlex.classList.remove('_active');

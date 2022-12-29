@@ -25,6 +25,9 @@
             margin-bottom: 0.93rem;
 
             img {
+                object-fit: cover;
+                object-position: center;
+
                 position: absolute;
                 left: 0;
                 top: 0;

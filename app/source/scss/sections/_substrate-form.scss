@@ -17,7 +17,8 @@
     }
 
     &__button {
-        width: 13.125rem;
+        width: 100%;
+        max-width: 13.125rem;
         height: 2.5rem;
     }
 
@@ -47,12 +48,24 @@
 
 @media (max-width: 1024px) {
     .substrate-form {
-        flex-direction: column;
+        flex-direction: column-reverse;
 
         &__images {
             transform: translateX(6.4%);
 
             width: 75%;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .substrate-form {
+        &__button {
+            margin-left: auto;
+        }
+
+        &__images {
+            width: 90%;
         }
     }
 }
