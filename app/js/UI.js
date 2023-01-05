@@ -14,11 +14,11 @@
 
         select.onclick = () => select.classList.toggle('_active');
 
-        const selectInput = select.querySelector('._select__input');
+        const selectInput = select.querySelector('._select__checked');
         const selectItems = select.querySelectorAll('._select__item');
 
         selectItems.forEach(selectItem => {
-            selectItem.onclick = () => selectInput.value = selectItem.textContent.trim();
+            selectItem.onclick = () => selectInput.textContent = selectItem.textContent.trim();
         });
     })
 })();
@@ -50,6 +50,7 @@ class MySlider {
         if (!beginHtml || !maxHtml) return;
 
         this.isCreatedCounter = true;
+        document.querySelector(this.counterBegin).textContent = 1;
         document.querySelector(this.counterMax).textContent = document.querySelectorAll(this.items).length;
     }
 
