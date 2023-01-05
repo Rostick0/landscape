@@ -201,6 +201,15 @@
         &__item {
             flex-direction: column;
 
+            &_list {
+                &::after {
+                    align-self: center;
+
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
             &_image {
                 padding: 25vw;
                 margin: 0 auto;
@@ -234,6 +243,10 @@
                 row-gap: 0.75rem;
 
                 max-width: 100%;
+            }
+
+            &_button {
+                margin-right: auto;
             }
         }
     }

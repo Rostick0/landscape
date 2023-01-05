@@ -46,17 +46,7 @@
     }
 
     &__list {
-        overflow-x: hidden;
-
         margin: 0 auto;
-
-        &_inner {
-            display: flex;
-
-            transition: 200ms;
-
-            transform: translateX(var(--transform-x));
-        }
     }
 
     &__item {
@@ -64,7 +54,6 @@
 
         display: flex;
         flex-direction: column;
-        flex: 0 0 33.33%;
 
         font-size: 1.125rem;
 
@@ -190,20 +179,6 @@
 
             padding: 0;
         }
-
-        &__item {
-            flex-basis: 50%;
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    .popular {
-        &__item {
-            flex-basis: 100%;
-
-            width: 100%;
-        }
     }
 }
 
@@ -214,12 +189,6 @@
             svg {
                 width: 2rem;
             }
-        }
-
-        &__item {
-            flex-basis: 100%;
-
-            width: 100%;
         }
     }
 }

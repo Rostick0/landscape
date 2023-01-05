@@ -7,22 +7,8 @@
         margin-bottom: 7.5rem;
     }
 
-    &__list {
-        overflow-x: hidden;
-
-        &_inner {
-            display: flex;
-
-            transition: 200ms;
-
-            transform: translateX(var(--transform-x));
-        }
-    }
-
     &__item {
         font-size: 1.5rem;
-
-        flex: 0 0 50%;
 
         padding: 0 10vw;
 
@@ -53,6 +39,8 @@
     &__counter {
         display: flex;
         align-items: center;
+
+        width: auto !important;
     }
 }
 

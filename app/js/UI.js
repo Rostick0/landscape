@@ -23,119 +23,49 @@
     })
 })();
 
-class MySlider {
-    constructor(mainBlock, block, items, prev, next) {
-        this.mainBlock = mainBlock;
-        this.block = block;
-        this.items = items;
-        this.prev = prev;
-        this.next = next;
-
-        this.isCreatedCounter = false;
-        this.counterBegin = null;
-        this.counterMax = null;
-    }
-
-    setMaxTransform(amountElems, countElems, flexBasis) {
-        return Math.round((amountElems - countElems) * flexBasis);
-    }
-
-    createCounter(begin, max) {
-        this.counterBegin = begin;
-        this.counterMax = max;
-
-        const beginHtml = this.mainBlock.querySelector(begin);
-        const maxHtml = this.mainBlock.querySelector(max);
-
-        if (!beginHtml || !maxHtml) return;
-
-        this.isCreatedCounter = true;
-        document.querySelector(this.counterBegin).textContent = 1;
-        document.querySelector(this.counterMax).textContent = document.querySelectorAll(this.items).length;
-    }
-
-    active() {
-        if (!this.mainBlock) return;
-
-        const leftArrow = this.mainBlock.querySelector(this.prev);
-        const rightArrow = this.mainBlock.querySelector(this.next);
-
-        const block = this.mainBlock.querySelector(this.block);
-        const items = this.mainBlock.querySelectorAll(this.items);
-
-        if (!leftArrow 
-            || 
-            !rightArrow
-            ||
-            !block
-            ||
-            !items
-            ) return;
-
-        let flexBasis = +getComputedStyle(items[0]).flexBasis.slice(0, -1);
-        let countSlide = Math.round(100 / flexBasis);
-        let maxTransformX = +this.setMaxTransform(items.length, countSlide, flexBasis) * -1;
-        let transformX = 0;
-
-        if (maxTransformX >= 0) return;
-
-        leftArrow.onclick = () => {
-            if (transformX >= 0) return;
-
-            transformX += +flexBasis;
-            transformX = Math.round(transformX * 100) / 100;
-
-            block.style = `--transform-x: ${transformX}%;`;
-
-            if (this.isCreatedCounter) {
-                document.querySelector(this.counterBegin).textContent--;
-            }
-        }
-
-        rightArrow.onclick = () => {
-            if (Math.round(transformX) <= maxTransformX) return;
-
-            transformX -= +flexBasis;
-            transformX = Math.round(transformX * 100) / 100;
-
-            block.style = `--transform-x: ${transformX}%;`;
-
-            if (this.isCreatedCounter) {
-                document.querySelector(this.counterBegin).textContent++;
-            }
-        }
-    }
-}
-
 (function () {
-    const popularProducts = document.querySelectorAll('.popular__products');
+    const popularProduct = document.querySelector('.popular__list');
 
-    if (!popularProducts.length) return;
+    if (!popularProduct) return;
 
-    popularProducts.forEach(elem => {
-        const slider = new MySlider(elem, '.popular__list_inner', '.popular__item', '.popular__arrow', '.popular__arrow._right')
-        slider.active();
-
-        window.addEventListener('resize', () => {
-            slider.active();
-        })
-    })
+    new Swiper(popularProduct, {
+        slidesPerView: 1,
+        navigation: {
+            nextEl: ".popular__arrow._right",
+            prevEl: ".popular__arrow._left"
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2
+            },
+            1366: {
+                slidesPerView: 3
+            }
+        }
+    });
 })();
 
 (function () {
-    const reviewsList = document.querySelectorAll('.reviews__list');
+    const review = document.querySelector('.reviews__list');
 
-    if (!reviewsList.length) return;
+    if (!review) return;
 
-    reviewsList.forEach(elem => {
-        const slider = new MySlider(elem, '.reviews__list_inner', '.reviews__item', '.reviews__arrow', '.reviews__arrow._right')
-        slider.active();
-        slider.createCounter('.reviews__counter_start', '.reviews__counter_max')
-
-        window.addEventListener('resize', () => {
-            slider.active();
-        })
-    })
+    new Swiper('.reviews__list', {
+        slidesPerView: 1,
+        pagination: {
+            el: ".reviews__counter",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".reviews__arrow._right",
+            prevEl: ".reviews__arrow._left",
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 2
+            }
+        }
+    });
 })();
 
 (() => {

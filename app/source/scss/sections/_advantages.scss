@@ -1,33 +1,9 @@
-@keyframes rotate-block {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotate-elem {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(-360deg);
-    }
-}
-
 .advantages {
     background-color: var(--first-background-color);
 
     padding: 9rem 0 8.25rem;
 
     overflow: hidden;
-
-    * {
-        //animation: none !important;
-    }
 
     &__container {
         display: flex;
@@ -36,8 +12,6 @@
     }
 
     &__content {
-        animation: rotate-block 8s infinite linear;
-
         display: inline-flex;
         align-items: center;
         align-self: flex-end;
@@ -72,12 +46,6 @@
                 }
             }
         }
-    }
-
-    &__text-rotate {
-        animation: rotate-elem 8s infinite linear;
-
-        display: inline-block;
     }
 }
 
