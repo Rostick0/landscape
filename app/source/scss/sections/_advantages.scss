@@ -47,6 +47,16 @@
             }
         }
     }
+
+    &__text {
+        transition: 1500ms;
+
+        opacity: 0;
+
+        &._active {
+            opacity: 1;
+        }
+    }
 }
 
 @media (max-width: 1024px) {

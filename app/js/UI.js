@@ -159,3 +159,58 @@
         headerContainerFlex.classList.remove('_active');
     }
 })();
+
+(() => {
+    const advantages = document.querySelector('.advantages');
+
+    if (!advantages) return;
+
+    const advantagesText1 = document.querySelector('.advantages__text._1');
+    const advantagesText2 = document.querySelector('.advantages__text._2');
+    const advantagesText3 = document.querySelector('.advantages__text._3');
+    const advantagesText4 = document.querySelector('.advantages__text._4');
+
+    document.addEventListener('scroll', throttle(e => {
+        const top = advantages.getBoundingClientRect().top;
+        //console.log(document.body.clientWidth)
+        const floor = Math.floor(document.body.clientWidth / 4);
+
+        if (top < -1000
+            ||
+            top > 1000) return;
+
+        console.log(roundCount(floor * -0.75, 100))
+
+        if (roundCount(top, 100) == roundCount(floor * 1, 100)) {
+            addClassActive(advantagesText1);
+            removeClassActive(advantagesText2);
+        }
+
+        if (roundCount(top, 100) == roundCount(floor * 0.75, 100)) {
+            addClassActive(advantagesText2);
+            removeClassActive(advantagesText1);
+            removeClassActive(advantagesText3);
+        }
+
+        if (roundCount(top, 100) == roundCount(floor * 0, 100)) {
+            addClassActive(advantagesText3);
+            removeClassActive(advantagesText2);
+            removeClassActive(advantagesText4);
+        }
+
+        if (roundCount(top, 100) == roundCount(floor * -0.75, 100)) {
+            addClassActive(advantagesText4);
+            removeClassActive(advantagesText3);
+        }
+
+        //console.log(top)
+
+
+    }, 50))
+
+    // throttle(() => {
+    //     document.addEventListener('scroll', () => {
+    //         console.log(5)
+    //     })
+    // }, 1000)
+})();
